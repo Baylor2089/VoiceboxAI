@@ -17,7 +17,7 @@ VoiceboxAI — 日语工作友好润色助手（macOS）
 方式 B：Electron（免 Xcode，本地或 CI 打包 DMG）
 本地打包：
 - 需要 Node.js (>=18)。在 `electron` 目录执行：
-  - `npm ci`
+  - `npm install`
   - `npm run dev`（开发模式）
   - `npm run dist`（生成 `.dmg` 在 `electron/dist/`）
 
