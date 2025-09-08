@@ -45,6 +45,19 @@ Google Gemini API 准备
 - 本项目不内置 Xcode 工程文件（.xcodeproj），请按「快速开始」用 Xcode 新建后拷入源码。
 - 若希望上架或分发，请根据你的签名、沙盒及权限策略自行调整。
 - Electron 版本默认未签名，首次打开需通过 右键 → 打开 或 系统设置允许。
+  - 如果出现“已损坏，无法打开”（Gatekeeper 判定），可先将 App 拖到 应用程序，然后在终端执行：
+    - `xattr -dr com.apple.quarantine /Applications/VoiceboxAI.app`
+    - 然后再从 Launchpad 或 Finder 打开。
+
+签名与公证（推荐，用于免提示安装）
+- 需要 Apple 开发者账号 + Developer ID Application 证书（导出为 .p12）。
+- 在 GitHub 仓库设置 Secrets：
+  - `CSC_LINK`：.p12 文件的 Base64 文本
+  - `CSC_KEY_PASSWORD`：证书密码
+  - `APPLE_ID`：你的 Apple ID（邮箱）
+  - `APPLE_APP_SPECIFIC_PASSWORD`：Apple ID 的应用专用密码
+  - `APPLE_TEAM_ID`：开发者团队 ID（10 位）
+- 提交后，Actions 会对 DMG 进行签名与公证。无 Secrets 时仍可构建未签名 DMG。
 
 可选增强
 - 全局快捷键呼出/隐藏窗口。
