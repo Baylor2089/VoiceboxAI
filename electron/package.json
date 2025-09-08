@@ -36,6 +36,6 @@
       "entitlementsInherit": "electron/build/entitlements.mac.plist",
       "artifactName": "${productName}-${version}-mac.${ext}"
     },
-    "afterSign": "electron/notarize.cjs"
+    "afterSign": "notarize.cjs"
   }
 }
