@@ -25,6 +25,8 @@ GitHub Actions 产出 DMG（无需本地构建）：
 1) 将仓库推到 GitHub。
 2) 在仓库的 Actions 页面启用并手动运行工作流 “Build macOS DMG (Electron)”。
 3) 成功后在该 workflow 的 run 页面下载构建产物（`.dmg`）。
+   - 若未配置证书 Secrets，将自动跳过签名并生成未签名 DMG。
+   - 配置证书 Secrets 后，工作流会自动执行签名与公证，得到可直接打开的 DMG。
 
 Electron 版本设置 API Key：点击窗口右上角设置图标 → 保存（默认保存到应用本地配置，非系统钥匙串）。
 
