@@ -1,0 +1,37 @@
+{
+  "name": "voiceboxai-electron",
+  "version": "0.1.0",
+  "description": "VoiceboxAI — Slack 友好的日语润色（Electron 版）",
+  "main": "main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --mac dmg"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.voiceboxai.electron",
+    "productName": "VoiceboxAI",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": false
+    }
+  }
+}
+

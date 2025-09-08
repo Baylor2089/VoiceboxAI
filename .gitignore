@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Xcode / Swift
+DerivedData/
+*.xcworkspace/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcuserdatad/
+
+# Swift Package Manager
+.build/
+
+# Node / Electron
+node_modules/
+electron/node_modules/
+electron/dist/
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log
+
+# Env
+.env
+.env.*
+

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoiceboxAI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="header">
+        <div class="title">VoiceboxAI</div>
+        <div class="actions">
+          <button id="settingsBtn" title="设置" class="icon-btn">⚙️</button>
+        </div>
+      </div>
+
+      <div class="settings" id="settingsPanel" hidden>
+        <div class="field">
+          <label>Google Gemini API Key</label>
+          <input type="password" id="apiKey" placeholder="粘贴 API Key" />
+        </div>
+        <div class="field inline">
+          <label>模型</label>
+          <input type="text" id="model" value="gemini-2.5-flash-lite" />
+        </div>
+        <div class="field inline">
+          <label>温度</label>
+          <input type="range" id="temperature" min="0" max="1" step="0.05" value="0.3" />
+          <span id="tempVal">0.30</span>
+        </div>
+        <div class="field">
+          <button id="saveSettings" class="primary">保存</button>
+        </div>
+      </div>
+
+      <div class="input">
+        <textarea id="input" rows="7" placeholder="在这里输入中文/英文/混合内容，目标：Slack 里的自然日语…"></textarea>
+      </div>
+      <div class="toolbar">
+        <button id="run" class="primary">转成日语（Slack 语气）</button>
+        <button id="clear">清空</button>
+        <div class="spacer"></div>
+        <button id="copy">复制结果</button>
+      </div>
+      <div class="output">
+        <div class="label">结果</div>
+        <div id="result" class="result" tabindex="0"></div>
+      </div>
+      <div id="error" class="error" hidden></div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+  </html>
+
